@@ -1,2 +1,2 @@
-# LinkList
-# Day14LinkList
+DataStructure Problems using java Generics in git repo LinkList
+
