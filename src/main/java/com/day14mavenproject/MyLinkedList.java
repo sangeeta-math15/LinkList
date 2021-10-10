@@ -34,16 +34,22 @@ public class MyLinkedList {
 		}
 	}
 
-	public void printMyNodes() {
-		StringBuilder myNodes = new StringBuilder("My Nodes : ");
-		INode tempNode = head;
-		while (tempNode.getNext() != null) {
-			myNodes.append(tempNode.getKey());
-			if (!tempNode.equals(tail))
-				myNodes.append("->");
-			tempNode = tempNode.getNext();
-		}
-		myNodes.append(tempNode.getKey());
-		System.out.println(myNodes);
+	/* This method is used to insert the element in between two nodes */
+	public void insert(INode myNode, INode newNode) {
+		INode tempNode = myNode.getNext();
+		myNode.setNext(newNode);
+		newNode.setNext(tempNode);
 	}
+
+	public void printMyNodes() {
+        StringBuilder myNodes = new StringBuilder("My Nodes : ");
+        INode tempNode = head;
+        while (tempNode.getNext() != null) {
+            myNodes.append(tempNode.getKey());
+            if (!tempNode.equals(tail)) myNodes.append("->");
+            tempNode = tempNode.getNext();
+        }
+        myNodes.append(tempNode.getKey());
+        System.out.println(myNodes);
+    }
 }

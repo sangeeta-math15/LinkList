@@ -12,7 +12,7 @@ public class MyNodeTest {
 		myFirstNode.setNext(mySecondNode);
 		mySecondNode.setNext(myThirdNode);
 		boolean result = myFirstNode.getNext().equals(mySecondNode) && mySecondNode.getNext().equals(myThirdNode);
-		System.out.println(result);
+		//System.out.println(result);
 		Assert.assertTrue(result);
 
 	}
