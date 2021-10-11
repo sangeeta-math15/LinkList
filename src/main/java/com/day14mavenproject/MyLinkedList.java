@@ -42,19 +42,34 @@ public class MyLinkedList {
 	}
 
 	/* This method is used for deleting the first node */
-    public void popFirst() {
-        if(head !=null)
-        this.head = head.getNext();
-    }
+	public void popFirst() {
+		if (head != null)
+			this.head = head.getNext();
+	}
+
+	/* Method is used for deleting the last node */
+	 public void popLast() {
+	        INode tempNode = head;
+	        while (tempNode.getNext() != tail) {
+	            tempNode = tempNode.getNext();
+	        }
+	        tempNode.setNext(null);
+	        tail = tempNode;
+	    }
+	
+	
+		
+	
 	public void printMyNodes() {
-        StringBuilder myNodes = new StringBuilder("My Nodes : ");
-        INode tempNode = head;
-        while (tempNode.getNext() != null) {
-            myNodes.append(tempNode.getKey());
-            if (!tempNode.equals(tail)) myNodes.append("->");
-            tempNode = tempNode.getNext();
-        }
-        myNodes.append(tempNode.getKey());
-        System.out.println(myNodes);
-    }
+		StringBuilder myNodes = new StringBuilder("My Nodes : ");
+		INode tempNode = head;
+		while (tempNode.getNext() != null) {
+			myNodes.append(tempNode.getKey());
+			if (!tempNode.equals(tail))
+				myNodes.append("->");
+			tempNode = tempNode.getNext();
+		}
+		myNodes.append(tempNode.getKey());
+		System.out.println(myNodes);
+	}
 }
